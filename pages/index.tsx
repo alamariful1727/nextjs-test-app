@@ -7,7 +7,7 @@ const Home = () => {
         <title>Test Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Home</h1>
+      <h1 className="bg-gray-100">Home</h1>
     </div>
   );
 };
