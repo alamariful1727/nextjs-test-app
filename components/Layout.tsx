@@ -23,11 +23,11 @@ const Layout = ({ children }: props) => {
             <a className="font-bold text-xl">Logo</a>
           </Link>
           <div className="flex space-x-3">
-            <Link href={paths.movies}>
-              <a className="text-yellow-500 capitalize underline">movies</a>
-            </Link>
             <Link href={paths.contact}>
-              <a className="text-yellow-500 capitalize underline">contact</a>
+              <a className="text-yellow-500 capitalize underline">contact us</a>
+            </Link>
+            <Link href={paths.users}>
+              <a className="text-yellow-500 capitalize underline">users</a>
             </Link>
             <Link href={paths.userProfile('alamariful1727')}>
               <a className="text-yellow-500 capitalize underline">Profile</a>

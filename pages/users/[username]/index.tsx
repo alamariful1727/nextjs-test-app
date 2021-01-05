@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import paths from '../../paths';
-import { App_Title } from '../../utils';
+import paths from '../../../paths';
+import { App_Title } from '../../../utils';
 
 const UserProfile = () => {
   const { query } = useRouter();

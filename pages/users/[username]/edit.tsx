@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { App_Title } from '../../utils';
+import { App_Title } from '../../../utils';
 
 const UserEdit = () => {
   const { query } = useRouter();

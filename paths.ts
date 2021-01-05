@@ -1,14 +1,11 @@
 export default {
   home: '/',
   contact: '/contact',
-  movies: '/movies',
-  singleMovie(id: string) {
-    return `/movies/${id}`;
-  },
+  users: '/users',
   userProfile(username: string) {
-    return `/${username}`;
+    return `/users/${username}`;
   },
   userProfileEdit(username: string) {
-    return `/${username}/edit`;
+    return `/users/${username}/edit`;
   },
 };
