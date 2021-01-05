@@ -5,9 +5,9 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>{App_Title} | Home</title>
+        <title>{App_Title}</title>
       </Head>
-      <h1 className="bg-gray-100">Home</h1>
+      <h1>Welcome to Next World!!</h1>
     </div>
   );
 };

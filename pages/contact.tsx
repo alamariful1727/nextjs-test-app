@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import { App_Title } from '../utils';
 
-const About = () => {
+const Contact = () => {
   return (
     <div>
       <Head>
-        <title>{App_Title} | About</title>
+        <title>{App_Title} | Contact</title>
       </Head>
-      <h1 className="bg-gray-100">About</h1>
+      <h1>Contact</h1>
     </div>
   );
 };
 
-export default About;
+export default Contact;

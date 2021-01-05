@@ -16,10 +16,29 @@ const Layout = ({ children }: props) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Link href={paths.about}>
-        <button className="border-2 px-3 py-2 my-2">Click to go About page!!</button>
-      </Link>
-      {children}
+
+      <div className="flex flex-col min-h-screen">
+        <header className="h-16 flex justify-between items-center px-6 bg-gray-800 text-white font-medium">
+          <Link href={paths.home}>
+            <a className="font-bold text-xl">Logo</a>
+          </Link>
+          <div className="flex space-x-3">
+            <Link href={paths.movies}>
+              <a className="text-yellow-500 capitalize underline">movies</a>
+            </Link>
+            <Link href={paths.contact}>
+              <a className="text-yellow-500 capitalize underline">contact</a>
+            </Link>
+            <Link href={paths.userProfile('alamariful1727')}>
+              <a className="text-yellow-500 capitalize underline">Profile</a>
+            </Link>
+          </div>
+        </header>
+        <div className="flex-1 py-6 my-16 sm:py-0 container mx-auto">{children}</div>
+        <footer className="h-12 flex justify-center items-center border-t border-gray-300">
+          <p className="text-gray-900 font-medium">© 2021 {App_Title}</p>
+        </footer>
+      </div>
     </div>
   );
 };
