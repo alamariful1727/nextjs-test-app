@@ -1,5 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import paths from '../../paths';
 import { App_Title } from '../../utils';
 
 type User = {
@@ -48,17 +50,19 @@ const Users = ({ users }: IProps) => {
       <h1 className="text-2xl font-medium">Users</h1>
       <div className="mt-8">
         {users.map(({ id, name, email, username }) => (
-          <div key={id} className="border border-yellow-500 bg-gray-800 rounded-md text-white py-5 px-2 mb-5">
-            <h2>
-              <span className="font-bold">Name</span> : {name}
-            </h2>
-            <h2>
-              <span className="font-bold">Email</span> : {email}
-            </h2>
-            <h2>
-              <span className="font-bold">Username</span> : {username}
-            </h2>
-          </div>
+          <Link href={paths.userProfile(username)} key={id}>
+            <a className="block border border-yellow-500 bg-gray-800 rounded-md text-white py-5 px-2 mb-5">
+              <h2>
+                <span className="font-bold">Name</span> : {name}
+              </h2>
+              <h2>
+                <span className="font-bold">Email</span> : {email}
+              </h2>
+              <h2>
+                <span className="font-bold">Username</span> : {username}
+              </h2>
+            </a>
+          </Link>
         ))}
       </div>
     </div>
