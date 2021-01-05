@@ -34,7 +34,7 @@ const Layout = ({ children }: props) => {
             </Link>
           </div>
         </header>
-        <div className="flex-1 py-6 my-16 sm:py-0 container mx-auto">{children}</div>
+        <div className="flex-1 px-6 my-16 sm:px-0 container mx-auto">{children}</div>
         <footer className="h-12 flex justify-center items-center border-t border-gray-300">
           <p className="text-gray-900 font-medium">© 2021 {App_Title}</p>
         </footer>
