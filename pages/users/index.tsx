@@ -1,56 +1,24 @@
-import { InferGetStaticPropsType } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import paths from '../../paths';
+import { User } from '../../types';
 import { App_Title } from '../../utils';
 
-type User = {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
+type Props = {
+  users: User[];
 };
 
-export const getStaticProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const users: User[] = await res.json();
-
-  return {
-    props: {
-      users,
-    },
-  };
-};
-
-interface IProps extends InferGetStaticPropsType<typeof getStaticProps> {}
-
-const Users = ({ users }: IProps) => {
+const Users = ({ users }: Props) => {
   return (
     <div>
       <Head>
         <title>{App_Title} | Users</title>
       </Head>
-      <h1 className="text-2xl font-medium">Users</h1>
+      <h1 className="text-2xl font-semibold">User List</h1>
       <div className="mt-8">
         {users.map(({ id, name, email, username }) => (
-          <Link href={paths.userProfile(username)} key={id}>
+          <Link href={paths.userProfile(id)} key={id}>
             <a className="block border border-yellow-500 bg-gray-800 rounded-md text-white py-5 px-2 mb-5">
               <h2>
                 <span className="font-bold">Name</span> : {name}
@@ -67,6 +35,27 @@ const Users = ({ users }: IProps) => {
       </div>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
+  try {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+    const users: User[] = await res.json();
+
+    return {
+      props: {
+        users,
+      },
+      //? Next.js will attempt to re-generate the page:
+      //? - When a request comes in
+      //? - At most once every second
+      revalidate: 1, //? In seconds
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default Users;

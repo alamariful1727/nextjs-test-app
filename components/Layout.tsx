@@ -29,7 +29,7 @@ const Layout = ({ children }: props) => {
             <Link href={paths.users}>
               <a className="text-yellow-500 capitalize underline">users</a>
             </Link>
-            <Link href={paths.userProfile('alamariful1727')}>
+            <Link href={paths.userProfile('3')}>
               <a className="text-yellow-500 capitalize underline">Profile</a>
             </Link>
           </div>

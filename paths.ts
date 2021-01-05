@@ -2,10 +2,10 @@ export default {
   home: '/',
   contact: '/contact',
   users: '/users',
-  userProfile(username: string) {
-    return `/users/${username}`;
+  userProfile(id: string | number) {
+    return `/users/${id}`;
   },
-  userProfileEdit(username: string) {
-    return `/users/${username}/edit`;
+  userProfileEdit(id: string | number) {
+    return `/users/${id}/edit`;
   },
 };
