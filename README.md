@@ -4,8 +4,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Setup Serverless
 
-First, run the development server:
-
 ```bash
 npm i -g serverless
 
@@ -42,6 +40,12 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
+```
+
+## Serverless AWS Deploy
+
+```bash
+npx serverless
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
