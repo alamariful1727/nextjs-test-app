@@ -39,7 +39,7 @@ const UserProfile = ({ user }: Props) => {
     <div>
       <Head>
         <title>
-          {App_Title} | {user.id}
+          {App_Title} | {user.name}
         </title>
       </Head>
       <div className="border border-yellow-500 bg-gray-800 rounded-md text-white py-5 px-2 mb-5">
