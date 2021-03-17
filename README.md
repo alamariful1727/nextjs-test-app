@@ -2,6 +2,38 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/alamariful1727/nextjs-test-app)
 
+## Setup Serverless
+
+First, run the development server:
+
+```bash
+npm i -g serverless
+
+# check version
+serverless --version
+```
+
+https://github.com/nodejs/node-gyp#on-windows
+
+```bash
+npm install -g node-gyp
+
+node-gyp configure
+# check version
+node-gyp rebuild
+```
+
+Serverless Config
+
+```bash
+serverless config credentials --provider aws --key ****** --secret ******
+
+# or with profile
+serverless config credentials --provider aws --key ****** --secret ****** --profile serverless-testing-arif-typhoon
+```
+
+Add Python & Visual Studio
+
 ## Getting Started
 
 First, run the development server:
